@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar - Login/Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: slideDown 0.5s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        /* Logo Styles */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 8px;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1d4ed8;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #1d4ed8;
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Auth Buttons */
+        .nav-auth {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-login, .btn-register {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: #1d4ed8;
+            border: 2px solid #1d4ed8;
+        }
+
+        .btn-login:hover {
+            background: #1d4ed8;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+        }
+
+        .btn-register {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+            background: #1d4ed8;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+            background: #1d4ed8;
+        }
+
+        /* Content */
+        .content {
+            padding: 100px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            color: #1d4ed8;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                gap: 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+            }
+            
+            .nav-auth {
+                display: none;
+            }
+            
+            .content h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .nav-menu {
+                top: 60px;
+            }
+            
+            .content {
+                padding: 80px 15px 30px;
+            }
+            
+            .content h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar 1 - With Login/Register -->
+    <nav class="navbar" id="navbar1">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">BrandName</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu1">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-auth">
+                <button class="btn-login">Login</button>
+                <button class="btn-register">Register</button>
+            </div>
+
+            <div class="hamburger" id="hamburger1">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Navigation Bar with Login/Register</h1>
+        <p>This is the first navigation bar with authentication buttons.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger1 = document.getElementById('hamburger1');
+            const navMenu1 = document.getElementById('navMenu1');
+            const navbar1 = document.getElementById('navbar1');
+
+            // Hamburger menu functionality
+            if (hamburger1 && navMenu1) {
+                hamburger1.addEventListener('click', function() {
+                    hamburger1.classList.toggle('active');
+                    navMenu1.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking nav links
+            if (navMenu1 && hamburger1) {
+                const navLinks = navMenu1.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu1.classList.remove('active');
+                        hamburger1.classList.remove('active');
+                    });
+                });
+            }
+
+            // Scroll effects
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset;
+                
+                if (scrollTop > 50) {
+                    if (navbar1) navbar1.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    if (navbar1) navbar1.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            const allNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Button click effects
+            const buttons = document.querySelectorAll('.btn-login, .btn-register');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Logo click animation
+            const logo = document.querySelector('.nav-logo');
+            if (logo) {
+                logo.addEventListener('click', function() {
+                    const logoIcon = this.querySelector('.logo-icon');
+                    logoIcon.style.animation = 'none';
+                    setTimeout(() => {
+                        logoIcon.style.animation = 'pulse 2s infinite';
+                    }, 10);
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu1 && hamburger1 && !navMenu1.contains(e.target) && !hamburger1.contains(e.target)) {
+                    navMenu1.classList.remove('active');
+                    hamburger1.classList.remove('active');
+                }
+            });
+
+            // Prevent menu close when clicking inside menu
+            if (navMenu1) {
+                navMenu1.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
