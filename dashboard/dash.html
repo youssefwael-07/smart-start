@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Dashboard - Smart Start</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dash.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2><i class="fas fa-graduation-cap"></i> Smart Start</h2>
+                <p>Mentor Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <i class="fas fa-chart-line"></i> Overview
+                </a>
+                <a href="#earnings" class="nav-item" data-section="earnings">
+                    <i class="fas fa-dollar-sign"></i> Earnings
+                </a>
+                <a href="#sessions" class="nav-item" data-section="sessions">
+                    <i class="fas fa-calendar-alt"></i> Sessions
+                </a>
+                <a href="#students" class="nav-item" data-section="students">
+                    <i class="fas fa-users"></i> Students
+                </a>
+                <a href="#feedback" class="nav-item" data-section="feedback">
+                    <i class="fas fa-star"></i> Feedback
+                </a>
+                <a href="#profile" class="nav-item" data-section="profile">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-title">
+                    <h1 id="page-title">Dashboard Overview</h1>
+                    <p id="page-subtitle">Welcome back, Dr. Sarah Johnson</p>
+                </div>
+                <div class="header-actions">
+                    <button class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-profile" id="userProfile">
+    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMzYjgyZjYiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTIwIDIxVjE5QTQgNCAwIDAgMCAxNiAxNUg4QTQgNCAwIDAgMCA0IDE5VjIxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="User" class="user-avatar">
+    <div class="dropdown" id="dropdown">
+        <a href="#profile">Profile</a>
+        <a href="#upload">upload</a>
+        <a href="#dowenload">dowenload</a>
+        <a href="#logout">Logout</a>
+    </div>
+</div>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section id="overview-section" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Earnings</h3>
+                            <p class="stat-value">$2,450</p>
+                            <span class="stat-change positive">+12% this month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Sessions Completed</h3>
+                            <p class="stat-value">147</p>
+                            <span class="stat-change positive">+8 this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Active Students</h3>
+                            <p class="stat-value">23</p>
+                            <span class="stat-change neutral">Same as last week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Average Rating</h3>
+                            <p class="stat-value">4.8</p>
+                            <span class="stat-change positive">+0.2 this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Monthly Earnings</h3>
+                        <canvas id="earningsChart" class="chart-placeholder">Earnings Chart</canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Session Distribution</h3>
+                        <canvas id="sessionsChart" class="chart-placeholder">Sessions Chart</canvas>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Session completed</strong> with Ahmed Hassan</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-amount">+$25</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>New review</strong> from Fatima Al-Zahra</p>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                            <div class="activity-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>New booking</strong> from Omar Khalil</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                            <div class="activity-amount">+$30</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Earnings Section -->
+            <section id="earnings-section" class="content-section">
+                <div class="earnings-header">
+                    <div class="earnings-summary">
+                        <h2>Earnings Overview</h2>
+                        <div class="earnings-total">
+                            <span class="currency">$</span>
+                            <span class="amount" id="totalEarnings">2,450</span>
+                            <span class="period">This Month</span>
+                        </div>
+                    </div>
+                    <div class="earnings-filters">
+                        <select id="earningsFilter">
+                            <option value="month">This Month</option>
+                            <option value="quarter">This Quarter</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="earnings-breakdown">
+                    <div class="breakdown-card">
+                        <h4>Session Earnings</h4>
+                        <p class="breakdown-amount">$2,100</p>
+                        <span class="breakdown-percentage">85.7%</span>
+                    </div>
+                    <div class="breakdown-card">
+                        <h4>Bonus Payments</h4>
+                        <p class="breakdown-amount">$250</p>
+                        <span class="breakdown-percentage">10.2%</span>
+                    </div>
+                    <div class="breakdown-card">
+                        <h4>Tips</h4>
+                        <p class="breakdown-amount">$100</p>
+                        <span class="breakdown-percentage">4.1%</span>
+                    </div>
+                </div>
+
+                <div class="earnings-table">
+                    <h3>Recent Transactions</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Student</th>
+                                <th>Session Type</th>
+                                <th>Duration</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsTable">
+                            <tr>
+                                <td>Dec 15, 2024</td>
+                                <td>Ahmed Hassan</td>
+                                <td>Career Guidance</td>
+                                <td>20 min</td>
+                                <td>$25</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 14, 2024</td>
+                                <td>Fatima Al-Zahra</td>
+                                <td>Resume Review</td>
+                                <td>30 min</td>
+                                <td>$35</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 13, 2024</td>
+                                <td>Omar Khalil</td>
+                                <td>Interview Prep</td>
+                                <td>45 min</td>
+                                <td>$50</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sessions Section -->
+            <section id="sessions-section" class="content-section">
+                <div class="sessions-header">
+                    <h2>Session Management</h2>
+                    <button class="btn-primary" id="addSessionBtn">
+                        <i class="fas fa-plus"></i> Add Availability
+                    </button>
+                </div>
+
+                <div class="sessions-calendar">
+                    <div class="calendar-header">
+                        <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth">December 2024</h3>
+                        <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="upcoming-sessions">
+                    <h3>Upcoming Sessions</h3>
+                    <div class="session-list">
+                        <div class="session-item">
+                            <div class="session-time">
+                                <span class="date">Dec 16</span>
+                                <span class="time">2:00 PM</span>
+                            </div>
+                            <div class="session-details">
+                                <h4>Career Guidance Session</h4>
+                                <p>with Ahmed Hassan</p>
+                                <span class="session-type">20 minutes • $25</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn-secondary">Reschedule</button>
+                                <button class="btn-primary">Join</button>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-time">
+                                <span class="date">Dec 17</span>
+                                <span class="time">10:30 AM</span>
+                            </div>
+                            <div class="session-details">
+                                <h4>Resume Review</h4>
+                                <p>with Layla Mohammed</p>
+                                <span class="session-type">30 minutes • $35</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn-secondary">Reschedule</button>
+                                <button class="btn-primary">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Students Section -->
+            <section id="students-section" class="content-section">
+                <div class="students-header">
+                    <h2>My Students</h2>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search students..." id="studentSearch">
+                    </div>
+                </div>
+
+                <div class="students-grid">
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Ahmed Hassan">
+                        </div>
+                        <div class="student-info">
+                            <h4>Ahmed Hassan</h4>
+                            <p>Computer Science Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 5 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $125 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Fatima Al-Zahra">
+                        </div>
+                        <div class="student-info">
+                            <h4>Fatima Al-Zahra</h4>
+                            <p>Business Graduate</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 3 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $90 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Omar Khalil">
+                        </div>
+                        <div class="student-info">
+                            <h4>Omar Khalil</h4>
+                            <p>Engineering Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 2 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $50 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback Section -->
+            <section id="feedback-section" class="content-section">
+                <div class="feedback-header">
+                    <h2>Student Feedback</h2>
+                    <div class="rating-summary">
+                        <div class="overall-rating">
+                            <span class="rating-number">4.8</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(47 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-list">
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Ahmed Hassan">
+                                <div>
+                                    <h4>Ahmed Hassan</h4>
+                                    <span class="feedback-date">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Dr. Sarah provided excellent career guidance. Her insights about the tech industry were invaluable and helped me understand my career path better."
+                        </p>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Fatima Al-Zahra">
+                                <div>
+                                    <h4>Fatima Al-Zahra</h4>
+                                    <span class="feedback-date">1 week ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Amazing session! Dr. Sarah helped me improve my resume and gave me practical tips for job interviews. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Omar Khalil">
+                                <div>
+                                    <h4>Omar Khalil</h4>
+                                    <span class="feedback-date">2 weeks ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Great mentoring session. Dr. Sarah was very knowledgeable and patient. Looking forward to our next session!"
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile-section" class="content-section">
+                <div class="profile-header">
+                    <h2>Profile Settings</h2>
+                </div>
+                <div class="profile-content">
+                    <form class="profile-form" id="profileForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="Dr. Sarah Johnson" id="fullName">
+                        </div>
+                        <div class="form-group">
+                            <label>Specialization</label>
+                            <input type="text" value="Software Engineering & Career Development" id="specialization">
+                        </div>
+                        <div class="form-group">
+                            <label>Hourly Rate ($)</label>
+                            <input type="number" value="25" id="hourlyRate">
+                        </div>
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea id="bio" rows="4">Experienced software engineer with 10+ years in the tech industry. Passionate about helping students and graduates navigate their career paths.</textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Dashboard functionality
+        class MentorDashboard {
+            constructor() {
+                this.currentSection = 'overview';
+                this.currentMonth = new Date();
+                this.earnings = {
+                    total: 2450,
+                    sessions: 2100,
+                    bonus: 250,
+                    tips: 100
+                };
+                this.init();
+            }
+
+            init() {
+                this.setupNavigation();
+                this.setupMobileMenu();
+                this.setupDropdown(); // Add this line
+                this.setupEarningsCounter();
+                this.setupCalendar();
+                this.setupCharts();
+                this.setupSearch();
+                this.setupFilters();
+                this.animateStats();
+            }
+
+            setupMobileMenu() {
+                const mobileToggle = document.getElementById('mobileMenuToggle');
+                const sidebar = document.getElementById('sidebar');
+                
+                if (mobileToggle && sidebar) {
+                    mobileToggle.addEventListener('click', () => {
+                        sidebar.classList.toggle('open');
+                    });
+
+                    // Close sidebar when clicking outside on mobile
+                    document.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768 && 
+                            !sidebar.contains(e.target) && 
+                            !mobileToggle.contains(e.target)) {
+                            sidebar.classList.remove('open');
+                        }
+                    });
+                }
+                setupDropdown() {
+                    const userProfile = document.getElementById('userProfile');
+                    const dropdown = document.getElementById('dropdown');
+                    
+                    if (userProfile && dropdown) {
+                        // Show dropdown on hover
+                        userProfile.addEventListener('mouseenter', () => {
+                            dropdown.style.opacity = '1';
+                            dropdown.style.visibility = 'visible';
+                            dropdown.style.transform = 'translateY(0)';
+                        });
+
+                        userProfile.addEventListener('mouseleave', () => {
+                            setTimeout(() => {
+                                if (!dropdown.matches(':hover')) {
+                                    dropdown.style.opacity = '0';
+                                    dropdown.style.visibility = 'hidden';
+                                    dropdown.style.transform = 'translateY(-10px)';
+                                }
+                            }, 100);
+                        });
+
+                        // Close dropdown when clicking outside
+                        document.addEventListener('click', (e) => {
+                            if (!userProfile.contains(e.target)) {
+                                dropdown.style.opacity = '0';
+                                dropdown.style.visibility = 'hidden';
+                                dropdown.style.transform = 'translateY(-10px)';
+                            }
+                        });
+
+                        // Handle dropdown link clicks
+                        dropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        
+        if (href === '#profile') {
+            // Switch to profile section
+            document.querySelector('[data-section="profile"]').click();
+        } else if (href === '#upload') {
+            this.showNotification('Upload courses panel would open here', 'info');
+        } else if (href === '#dowenload') {
+            this.showNotification('Download panel would open here', 'info');
+        } else if (href === '#logout') {
+            this.showNotification('Logging out...', 'info');
+            setTimeout(() => {
+                window.location.href = '/login';
+            }, 1000);
+        }
+        
+        // Close dropdown
+        dropdown.style.opacity = '0';
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.transform = 'translateY(-10px)';
+    });
+});
+                    }
+                }
+            }
+
+            setupNavigation() {
+                const navItems = document.querySelectorAll('.nav-item');
+                const sections = document.querySelectorAll('.content-section');
+
+                navItems.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        
+                        // Remove active class from all nav items and sections
+                        navItems.forEach(nav => nav.classList.remove('active'));
+                        sections.forEach(section => section.classList.remove('active'));
+                        
+                        // Add active class to clicked nav item
+                        item.classList.add('active');
+                        
+                        // Show corresponding section
+                        const sectionId = item.dataset.section + '-section';
+                        const targetSection = document.getElementById(sectionId);
+                        if (targetSection) {
+                            targetSection.classList.add('active');
+                            targetSection.classList.add('fade-in');
+                        }
+                        
+                        // Update page title
+                        this.updatePageTitle(item.dataset.section);
+                        
+                        // Update current section
+                        this.currentSection = item.dataset.section;
+
+                        // Close mobile menu
+                        if (window.innerWidth <= 768) {
+                            document.getElementById('sidebar').classList.remove('open');
+                        }
+                    });
+                });
+            }
+
+            updatePageTitle(section) {
+                const titles = {
+                    overview: 'Dashboard Overview',
+                    earnings: 'Earnings & Revenue',
+                    sessions: 'Session Management',
+                    students: 'My Students',
+                    feedback: 'Student Feedback',
+                    profile: 'Profile Settings'
+                };
+                
+                const subtitles = {
+                    overview: 'Welcome back, Dr. Sarah Johnson',
+                    earnings: 'Track your income and payments',
+                    sessions: 'Manage your consultation schedule',
+                    students: 'Connect with your mentees',
+                    feedback: 'Reviews and ratings from students',
+                    profile: 'Update your mentor profile'
+                };
+
+                const titleElement = document.getElementById('page-title');
+                const subtitleElement = document.getElementById('page-subtitle');
+                
+                if (titleElement) titleElement.textContent = titles[section] || 'Dashboard';
+                if (subtitleElement) subtitleElement.textContent = subtitles[section] || '';
+            }
+
+            setupEarningsCounter() {
+                const totalEarningsElement = document.getElementById('totalEarnings');
+                if (totalEarningsElement) {
+                    this.animateCounter(totalEarningsElement, 0, this.earnings.total, 2000);
+                }
+
+                // Setup earnings filter
+                const earningsFilter = document.getElementById('earningsFilter');
+                if (earningsFilter) {
+                    earningsFilter.addEventListener('change', (e) => {
+                        this.updateEarningsDisplay(e.target.value);
+                    });
+                }
+            }
+
+            animateCounter(element, start, end, duration) {
+                const startTime = performance.now();
+                const animate = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const current = Math.floor(start + (end - start) * progress);
+                    
+                    element.textContent = current.toLocaleString();
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                };
+                requestAnimationFrame(animate);
+            }
+
+            updateEarningsDisplay(period) {
+                const earnings = {
+                    month: { total: 2450, sessions: 2100, bonus: 250, tips: 100 },
+                    quarter: { total: 7200, sessions: 6300, bonus: 600, tips: 300 },
+                    year: { total: 28800, sessions: 25200, bonus: 2400, tips: 1200 }
+                };
+
+                const data = earnings[period];
+                if (data) {
+                    const totalElement = document.getElementById('totalEarnings');
+                    if (totalElement) {
+                        this.animateCounter(totalElement, 0, data.total, 1000);
+                    }
+                    
+                    // Update breakdown cards
+                    const breakdownCards = document.querySelectorAll('.breakdown-amount');
+                    if (breakdownCards.length >= 3) {
+                        breakdownCards[0].textContent = '$' + data.sessions.toLocaleString();
+                        breakdownCards[1].textContent = '$' + data.bonus.toLocaleString();
+                        breakdownCards[2].textContent = '$' + data.tips.toLocaleString();
+                    }
+                }
+            }
+
+            setupCalendar() {
+                const prevButton = document.getElementById('prevMonth');
+                const nextButton = document.getElementById('nextMonth');
+                const currentMonthElement = document.getElementById('currentMonth');
+                const calendarGrid = document.getElementById('calendarGrid');
+
+                if (prevButton && nextButton && currentMonthElement && calendarGrid) {
+                    prevButton.addEventListener('click', () => {
+                        this.currentMonth.setMonth(this.currentMonth.getMonth() - 1);
+                        this.renderCalendar();
+                    });
+
+                    nextButton.addEventListener('click', () => {
+                        this.currentMonth.setMonth(this.currentMonth.getMonth() + 1);
+                        this.renderCalendar();
+                    });
+
+                    this.renderCalendar();
+                }
+            }
+
+            renderCalendar() {
+                const currentMonthElement = document.getElementById('currentMonth');
+                const calendarGrid = document.getElementById('calendarGrid');
+                
+                if (!currentMonthElement || !calendarGrid) return;
+
+                const monthNames = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+
+                currentMonthElement.textContent = `${monthNames[this.currentMonth.getMonth()]} ${this.currentMonth.getFullYear()}`;
+
+                // Clear calendar
+                calendarGrid.innerHTML = '';
+
+                // Add day headers
+                const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                dayHeaders.forEach(day => {
+                    const dayHeader = document.createElement('div');
+                    dayHeader.textContent = day;
+                    dayHeader.style.fontWeight = 'bold';
+                    dayHeader.style.textAlign = 'center';
+                    dayHeader.style.padding = '0.5rem';
+                    dayHeader.style.color = 'var(--foreground-muted)';
+                    calendarGrid.appendChild(dayHeader);
+                });
+
+                // Get first day of month and number of days
+                const firstDay = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth(), 1);
+                const lastDay = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 1, 0);
+                const startDate = firstDay.getDay();
+                const daysInMonth = lastDay.getDate();
+
+                // Add empty cells for days before month starts
+                for (let i = 0; i < startDate; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day';
+                    calendarGrid.appendChild(emptyDay);
+                }
+
+                // Add days of month
+                const sessionsData = [5, 12, 18, 25]; // Sample session days
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = day;
+                    
+                    if (sessionsData.includes(day)) {
+                        dayElement.classList.add('has-session');
+                        dayElement.title = 'You have sessions on this day';
+                    }
+                    
+                    dayElement.addEventListener('click', () => {
+                        this.selectCalendarDay(dayElement, day);
+                    });
+                    
+                    calendarGrid.appendChild(dayElement);
+                }
+            }
+
+            selectCalendarDay(element, day) {
+                // Remove previous selection
+                document.querySelectorAll('.calendar-day.selected').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                
+                // Add selection to clicked day
+                element.classList.add('selected');
+                
+                console.log(`Selected day: ${day}`);
+            }
+
+            setupCharts() {
+                // Simple chart implementation using Canvas
+                this.createEarningsChart();
+                this.createSessionsChart();
+            }
+
+            createEarningsChart() {
+                const canvas = document.getElementById('earningsChart');
+                if (!canvas) return;
+
+                const ctx = canvas.getContext('2d');
+                const width = canvas.width = canvas.offsetWidth;
+                const height = canvas.height = 200;
+
+                // Sample data for the last 6 months
+                const months = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                const earnings = [1800, 2100, 1950, 2300, 2200, 2450];
+                const maxEarning = Math.max(...earnings);
+
+                // Clear canvas
+                ctx.clearRect(0, 0, width, height);
+
+                // Set styles
+                ctx.strokeStyle = '#0891b2';
+                ctx.fillStyle = '#0891b2';
+                ctx.lineWidth = 3;
+
+                // Draw line chart
+                ctx.beginPath();
+                earnings.forEach((earning, index) => {
+                    const x = (index / (earnings.length - 1)) * (width - 40) + 20;
+                    const y = height - 40 - ((earning / maxEarning) * (height - 80));
+                    
+                    if (index === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                    
+                    // Draw points
+                    ctx.fillRect(x - 3, y - 3, 6, 6);
+                });
+                ctx.stroke();
+
+                // Draw labels
+                ctx.fillStyle = '#cbd5e1';
+                ctx.font = '12px Arial';
+                months.forEach((month, index) => {
+                    const x = (index / (months.length - 1)) * (width - 40) + 20;
+                    ctx.fillText(month, x - 10, height - 10);
+                });
+            }
+
+            createSessionsChart() {
+                const canvas = document.getElementById('sessionsChart');
+                if (!canvas) return;
+
+                const ctx = canvas.getContext('2d');
+                const width = canvas.width = canvas.offsetWidth;
+                const height = canvas.height = 200;
+
+                // Sample data
+                const sessionTypes = ['Career Guidance', 'Resume Review', 'Interview Prep', 'Skill Development'];
+                const sessionCounts = [45, 32, 28, 42];
+                const colors = ['#254d70', '#0891b2', '#3a6d9a', '#22d3ee'];
+                const total = sessionCounts.reduce((a, b) => a + b, 0);
+
+                // Clear canvas
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw pie chart
+                const centerX = width / 2;
+                const centerY = height / 2;
+                const radius = Math.min(width, height) / 2 - 20;
+                let currentAngle = -Math.PI / 2;
+
+                sessionCounts.forEach((count, index) => {
+                    const sliceAngle = (count / total) * 2 * Math.PI;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(centerX, centerY);
+                    ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+                    ctx.closePath();
+                    ctx.fillStyle = colors[index];
+                    ctx.fill();
+                    
+                    currentAngle += sliceAngle;
+                });
+
+                // Draw legend
+                ctx.font = '10px Arial';
+                sessionTypes.forEach((type, index) => {
+                    const y = 20 + index * 15;
+                    ctx.fillStyle = colors[index];
+                    ctx.fillRect(10, y - 6, 8, 8);
+                    ctx.fillStyle = '#cbd5e1';
+                    ctx.fillText(`${type} (${sessionCounts[index]})`, 25, y);
+                });
+            }
+
+            setupSearch() {
+                const searchInput = document.getElementById('studentSearch');
+                if (searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        this.filterStudents(e.target.value);
+                    });
+                }
+            }
+
+            filterStudents(searchTerm) {
+                const studentCards = document.querySelectorAll('.student-card');
+                studentCards.forEach(card => {
+                    const studentName = card.querySelector('h4').textContent.toLowerCase();
+                    const studentField = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (studentName.includes(searchTerm.toLowerCase()) || 
+                        studentField.includes(searchTerm.toLowerCase())) {
+                        card.style.display = 'flex';
+                        card.classList.add('slide-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            setupFilters() {
+                // Add session button functionality
+                const addSessionBtn = document.getElementById('addSessionBtn');
+                if (addSessionBtn) {
+                    addSessionBtn.addEventListener('click', () => {
+                        this.showAddSessionModal();
+                    });
+                }
+
+                // Add other interactive elements
+                this.setupSessionActions();
+                this.setupStudentActions();
+                this.setupProfileForm();
+            }
+
+            setupSessionActions() {
+                document.querySelectorAll('.session-actions .btn-primary').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        if (e.target.textContent === 'Join') {
+                            this.joinSession(e.target.closest('.session-item'));
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.session-actions .btn-secondary').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        if (e.target.textContent === 'Reschedule') {
+                            this.rescheduleSession(e.target.closest('.session-item'));
+                        }
+                    });
+                });
+            }
+
+            setupStudentActions() {
+                document.querySelectorAll('.student-actions .btn-primary').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        if (e.target.textContent === 'Schedule') {
+                            this.scheduleWithStudent(e.target.closest('.student-card'));
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.student-actions .btn-secondary').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        if (e.target.textContent === 'Message') {
+                            this.messageStudent(e.target.closest('.student-card'));
+                        }
+                    });
+                });
+            }
+
+            setupProfileForm() {
+                const profileForm = document.getElementById('profileForm');
+                if (profileForm) {
+                    profileForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        this.showNotification('Profile updated successfully!', 'success');
+                    });
+                }
+            }
+
+            animateStats() {
+                const statValues = document.querySelectorAll('.stat-value');
+                statValues.forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.classList.add('fade-in');
+                        const value = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+                        if (value) {
+                            this.animateCounter(stat, 0, value, 1500);
+                        }
+                    }, index * 200);
+                });
+            }
+
+            // Modal and interaction methods
+            showAddSessionModal() {
+                this.showNotification('Add Session Modal would open here. This would allow you to set your availability.', 'info');
+            }
+
+            joinSession(sessionElement) {
+                const studentName = sessionElement.querySelector('p').textContent.replace('with ', '');
+                this.showNotification(`Joining session with ${studentName}. This would open the video call interface.`, 'info');
+            }
+
+            rescheduleSession(sessionElement) {
+                const studentName = sessionElement.querySelector('p').textContent.replace('with ', '');
+                this.showNotification(`Rescheduling session with ${studentName}. This would open a calendar picker.`, 'info');
+            }
+
+            scheduleWithStudent(studentElement) {
+                const studentName = studentElement.querySelector('h4').textContent;
+                this.showNotification(`Scheduling new session with ${studentName}. This would open the scheduling interface.`, 'info');
+            }
+
+            messageStudent(studentElement) {
+                const studentName = studentElement.querySelector('h4').textContent;
+                this.showNotification(`Opening chat with ${studentName}. This would open the messaging interface.`, 'info');
+            }
+
+            // Notification system
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+
+            // Real-time updates simulation
+            simulateRealTimeUpdates() {
+                setInterval(() => {
+                    // Simulate new notification
+                    const notifications = [
+                        'New session booked with Maria Garcia',
+                        'Payment received: $25',
+                        'New review from Ahmed Hassan',
+                        'Reminder: Session in 30 minutes'
+                    ];
+                    
+                    if (Math.random() < 0.1) { // 10% chance every interval
+                        const randomNotification = notifications[Math.floor(Math.random() * notifications.length)];
+                        this.showNotification(randomNotification, 'info');
+                        
+                        // Update notification badge
+                        const badge = document.querySelector('.notification-badge');
+                        if (badge) {
+                            const currentCount = parseInt(badge.textContent) || 0;
+                            badge.textContent = currentCount + 1;
+                        }
+                    }
+                }, 10000); // Check every 10 seconds
+            }
+        }
+
+        // Initialize dashboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const dashboard = new MentorDashboard();
+            
+            // Start real-time updates simulation
+            dashboard.simulateRealTimeUpdates();
+            
+            // Add some interactive feedback
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('.btn-primary, .btn-secondary')) {
+                    e.target.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        e.target.style.transform = 'scale(1)';
+                    }, 150);
+                }
+            });
+
+            // Add hover effects for cards
+            document.querySelectorAll('.stat-card, .student-card, .feedback-item').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-2px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+
+            console.log('Smart Start Mentor Dashboard initialized successfully!');
+        });
+
+        // Add some utility functions
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            }).format(amount);
+        }
+
+        function formatDate(date) {
+            return new Intl.DateTimeFormat('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            }).format(date);
+        }
+
+        function formatTime(date) {
+            return new Intl.DateTimeFormat('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            }).format(date);
+        }
+    </script>
+</body>perm_dragon
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MentorLink - Enhanced Video Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="dowenload.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <div class="logo">ML</div>
+        <h2>Mentor<span>Link</span></h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item active" data-page="downloaded">
+            <i class="fas fa-download"></i> Downloaded
+          </li>
+          <li class="nav-item" data-page="discover">
+            <i class="fas fa-compass"></i> Discover
+          </li>
+          <li class="nav-item" data-page="history">
+            <i class="fas fa-history"></i> History
+          </li>
+          <li class="nav-item" data-page="bookmarks">
+            <i class="fas fa-bookmark"></i> Bookmarks
+          </li>
+          <li class="nav-item" data-page="certificates">
+            <i class="fas fa-certificate"></i> Certificates
+          </li>
+          <li class="nav-item" data-page="settings">
+            <i class="fas fa-cog"></i> Settings
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="mentor-profile">
+        <div class="avatar">JD</div>
+        <div class="mentor-info">
+          <h4>John Doe</h4>
+          <p>Senior Mentor</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1 id="page-title">Enhanced Video Platform</h1>
+        <div class="search-container">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-input" placeholder="Search videos..." autocomplete="off">
+        </div>
+        <div class="header-actions">
+          <button class="btn-icon" id="add-video-btn" title="Add YouTube Video">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="btn-icon" id="notifications-btn" title="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </button>
+          <button class="btn-icon" id="filters-btn" title="Advanced Filters">
+            <i class="fas fa-sliders-h"></i>
+          </button>
+          <button class="btn-icon" id="fullscreen-btn" title="Toggle Fullscreen">
+            <i class="fas fa-expand"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Add Video Modal -->
+      <div class="add-video-modal" id="add-video-modal">
+        <div class="add-video-content">
+          <div class="add-video-header">
+            <h3>Add YouTube Video</h3>
+            <button class="close-btn" id="close-add-video">&times;</button>
+          </div>
+          <div class="add-video-form">
+            <div class="form-group">
+              <label for="video-url">YouTube URL</label>
+              <input type="url" id="video-url" placeholder="https://www.youtube.com/watch?v=..." required>
+            </div>
+            <div class="form-group">
+              <label for="video-title">Video Title</label>
+              <input type="text" id="video-title-input" placeholder="Enter video title" required>
+            </div>
+            <div class="form-group">
+              <label for="video-desc">Description</label>
+              <textarea id="video-desc" placeholder="Enter video description" rows="3"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" id="cancel-add-video" class="btn-secondary">Cancel</button>
+              <button type="button" id="confirm-add-video" class="btn-primary">Add Video</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Options -->
+      <div class="filter-options">
+        <button class="filter-btn active" data-filter="all">All Videos</button>
+        <button class="filter-btn" data-filter="in-progress">In Progress</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="not-started">Not Started</button>
+        <div class="sort-dropdown">
+          <button class="sort-btn" id="sort-btn">
+            <i class="fas fa-sort"></i> Sort by: <span id="sort-text">Recent</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="sort-dropdown-menu" id="sort-menu">
+            <div class="sort-option active" data-sort="recent">Recent</div>
+            <div class="sort-option" data-sort="alphabetical">Alphabetical</div>
+            <div class="sort-option" data-sort="progress">Progress</div>
+            <div class="sort-option" data-sort="duration">Duration</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Playlist -->
+      <div class="course-playlist" id="course-playlist">
+        <!-- Video items will be dynamically generated -->
+      </div>
+
+      <!-- Continue Learning Section -->
+      <section class="continue-learning">
+        <h2>Continue Learning</h2>
+        <div class="continue-cards" id="continue-cards">
+          <!-- Continue cards will be dynamically generated -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Video Player Modal -->
+  <div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+      <div class="video-header">
+        <h3 id="video-title">Video Title</h3>
+        <button class="close-btn" id="close-video" title="Close Video">&times;</button>
+      </div>
+      <div class="video-container">
+        <!-- YouTube iframe will be inserted here -->
+        <div id="video-player-container"></div>
+        <div class="video-overlay" id="video-overlay">
+          <div class="play-button" id="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+      <div class="video-info">
+        <div class="video-meta">
+          <span class="video-duration">
+            <i class="fas fa-clock"></i> 
+            <span id="video-duration-text">0:00</span>
+          </span>
+          <span class="video-views">
+            <i class="fas fa-eye"></i> 
+            <span id="video-views">0</span> views
+          </span>
+          <span class="video-likes">
+            <i class="fas fa-heart"></i> 
+            <span id="video-likes">0</span> likes
+          </span>
+        </div>
+        <div class="video-actions">
+          <button class="action-btn" id="like-btn" title="Like Video">
+            <i class="fas fa-heart"></i> Like
+          </button>
+          <button class="action-btn" id="bookmark-btn" title="Bookmark Video">
+            <i class="fas fa-bookmark"></i> Bookmark
+          </button>
+          <button class="action-btn" id="share-btn" title="Share Video">
+            <i class="fas fa-share"></i> Share
+          </button>
+          <button class="action-btn" id="remove-btn" title="Remove Video">
+            <i class="fas fa-trash"></i> Remove
+          </button>
+        </div>
+        <div class="video-description">
+          <p id="video-description-text">Video description will appear here...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dowenload.js"></script>
+</body>
+</html>
